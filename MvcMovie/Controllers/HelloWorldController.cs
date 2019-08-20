@@ -16,20 +16,30 @@ namespace MvcMovie.Controllers
         }
 
 
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
+        }
+
+
+
         /// <summary>
         /// Método de ejemplo para usarlo en un endpoint con paso de parámetros
-        /// http://localhost:xxxx/HelloWorld/Welcome?name=Rick&numtimes=4
+        /// http://localhost:xxxx/HelloWorld/Welcome1?name=Rick&numtimes=4
         /// </summary>
         /// <param name="name"></param>
         /// <param name="numTimes"></param>
         /// <returns></returns>
-        public string Welcome(string name, int numTimes = 1)
+        public string Welcome1(string name, int numTimes = 1)
         {
             return HtmlEncoder.Default.Encode($" Hola {name}, NumTimes es: {numTimes}");
         }
         /// <summary>
         /// Método de ejemplo para usarlo en un endpoint con paso de parámetros
-        /// http://localhost:xxx/HelloWorld/Welcome/3?name=Rick
+        /// http://localhost:xxx/HelloWorld/Welcome2/3?name=Rick
         /// </summary>
         /// <param name="name"></param>
         /// <param name="ID"></param>
