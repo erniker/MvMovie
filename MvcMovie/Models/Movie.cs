@@ -16,7 +16,7 @@ namespace MvcMovie.Models
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
-        [RegularExpression(@" ^[ A-Z] +[ a-zA-Z""'\ s-]* $")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(30)]
         public string Genre { get; set; }
@@ -26,7 +26,7 @@ namespace MvcMovie.Models
         [Column(TypeName = "decimal( 18, 2)")]
         public decimal Price { get; set; }
 
-        [RegularExpression(@" ^[ A-Z] +[ a-zA-Z""'\ s-]* $")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(5)]
         public string Rating { get; set; }
